@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio de Número</title>
+
+    <style>
+        body {
+            text-align: center;
+            background-color: rgb(233, 159, 109);
+        }
+
+        button {
+            border: none;
+            background-color: rgb(30, 138, 209);
+            padding: .5% .7%;
+            color: white;
+            font-weight: bold;
+        }
+
+        button:hover {
+            color: rgb(30, 138, 209);
+            background-color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorteio de Número</h1>
+    <main>
+        <button onclick="sorteiaNumero()">Sortear um número</button>
+        <h1 id="numeroSorteado"></h1>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
