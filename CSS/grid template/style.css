@@ -1,0 +1,28 @@
+.r1 {
+    background-color: brown;
+}
+
+.r2 {
+    background-color: aquamarine;
+}
+
+.r3 {
+    background-color: bisque;
+}
+
+.rect {
+    padding: 1%;
+    border: 1px solid black;
+}
+
+
+.containerGrid {
+    display: grid;
+    background-color: green;
+    padding: 5%;
+
+    /* grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 2fr 3fr; */
+
+    grid-template: 1fr 2fr 3fr / 2fr 1fr;
+}
