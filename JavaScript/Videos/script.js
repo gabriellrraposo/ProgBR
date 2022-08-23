@@ -1,4 +1,5 @@
 let video = document.getElementById("video1")
+video.onclick = video.pause
 
 let retroceder = function () {
     video.currentTime -= 15
