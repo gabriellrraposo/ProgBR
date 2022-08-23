@@ -28,6 +28,7 @@
         
         padding: 1% 0;
     }
+    
 
     .icones {
         width: 20%;
@@ -39,26 +40,29 @@
         color: white;
         font-size: 1.3rem;
         margin: 0 10%;
+        cursor: pointer;
     }
 </style>
 <body>
     <!-- <video preload="auto" muted controls loop src="./siteLaVie.mkv" width="1000px"></video> -->
     <div class="container">
-        <video src="./siteLaVie.mkv" class="video" width="100%"></video>
+        <video id="video1" src="./siteLaVie.mkv" class="video" width="100%"></video>
         <div class="controles">
             <div class="icones">
-                <i class="fa-solid fa-backward btn"></i>
-                <i class="fa-solid fa-forward btn"></i>
+                <i class="fa-solid fa-backward btn" onclick="retroceder()"></i>
+                <i class="fa-solid fa-forward btn" onclick="avancar()"></i>
             </div>
             <div class="icones">
-                <i class="fa-solid fa-minus btn"></i>
-                <i class="fa-solid fa-plus btn"></i>
+                <i class="fa-solid fa-minus btn" onclick="diminuirVel()"></i>
+                <i class="fa-solid fa-plus btn" onclick="aumentarVel()"></i>
             </div>
             <div class="icones">
-                <i class="fa-solid fa-pause btn"></i>
-                <i class="fa-solid fa-play btn"></i>
+                <i class="fa-solid fa-pause btn" onclick="pause()"></i>
+                <i class="fa-solid fa-stop btn" onclick="stop()"></i>
+                <i class="fa-solid fa-play btn" onclick="play()"></i>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
