@@ -22,10 +22,27 @@ imagem.addEventListener("click", function() {
 
 
 //Utilizando um atributo inventado
-let lista = document.getElementById("lista")
+// let lista = document.getElementById("lista")
 
-let num = lista.getAttribute("num")
+// let num = lista.getAttribute("num")
 
-for (i = 1; i <= num; i++) {
+// for (i = 1; i <= num; i++) {
+//     lista.innerHTML += `<li>${i}</li>`
+// }
+
+
+//Utilizando atributo inventado, mas com boas práticas
+//Dessa forma, o dataset é capaz de fazer a função de set e get
+let lista2 = document.getElementById("lista2")
+
+let num2 = lista2.dataset.num
+lista2.dataset.num = 10
+let num3 = lista2.dataset.num
+
+for (i = 1; i <= num2; i++) {
+    lista2.innerHTML += `<li>${i}</li>`
+}
+
+for (i = 1; i <= num3; i++) {
     lista.innerHTML += `<li>${i}</li>`
 }
