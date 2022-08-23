@@ -22,7 +22,7 @@ imagem.addEventListener("click", function() {
 
 
 //Utilizando um atributo inventado
-// let lista = document.getElementById("lista")
+let lista = document.getElementById("lista")
 
 // let num = lista.getAttribute("num")
 
