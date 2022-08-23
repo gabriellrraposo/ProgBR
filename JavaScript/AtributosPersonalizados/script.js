@@ -21,4 +21,11 @@ imagem.addEventListener("click", function() {
 })
 
 
+//Utilizando um atributo inventado
+let lista = document.getElementById("lista")
 
+let num = lista.getAttribute("num")
+
+for (i = 1; i <= num; i++) {
+    lista.innerHTML += `<li>${i}</li>`
+}
