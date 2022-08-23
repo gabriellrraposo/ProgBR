@@ -5,8 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Videos</title>
+
+    <script src="https://kit.fontawesome.com/415f58636f.js" crossorigin="anonymous"></script>
 </head>
+
+<style>
+    .container {
+        position: relative;
+        width: 640px;
+        height: 360px;
+    }
+
+    .controles {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.623);
+        width: 100%;
+        
+        padding: 1% 0;
+    }
+
+    .icones {
+        width: 20%;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .btn {
+        color: white;
+        font-size: 1.3rem;
+        margin: 0 10%;
+    }
+</style>
 <body>
-    <video preload="auto" muted controls loop src="./siteLaVie.mkv" width="1000px"></video>
+    <!-- <video preload="auto" muted controls loop src="./siteLaVie.mkv" width="1000px"></video> -->
+    <div class="container">
+        <video src="./siteLaVie.mkv" class="video" width="100%"></video>
+        <div class="controles">
+            <div class="icones">
+                <i class="fa-solid fa-backward btn"></i>
+                <i class="fa-solid fa-forward btn"></i>
+            </div>
+            <div class="icones">
+                <i class="fa-solid fa-minus btn"></i>
+                <i class="fa-solid fa-plus btn"></i>
+            </div>
+            <div class="icones">
+                <i class="fa-solid fa-pause btn"></i>
+                <i class="fa-solid fa-play btn"></i>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
