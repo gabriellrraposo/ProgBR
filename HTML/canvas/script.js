@@ -50,3 +50,35 @@ ctx.fillStyle = "bisque";
 
 ctx.fill();
 ctx.stroke();
+
+///////////////////////////////////
+
+ctx.beginPath()
+
+
+let x = 700;
+let y = 500;
+let raio = 150;
+
+//Início e fim são medidos em radianos
+let inicio = 0;
+let fim = 1.5 * Math.PI;
+
+
+ctx.arc(x, y, raio, inicio, fim)
+ctx.lineTo(700, 500)
+ctx.closePath()
+ctx.strokeStyle = "black"
+ctx.fillStyle = "yellow"
+
+ctx.lineWidth = 5
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+
+ctx.arc(630, 450, 20, 0, 2 * Math.PI)
+
+ctx.fillStyle = 'black'
+ctx.fill()
+ctx.stroke()
