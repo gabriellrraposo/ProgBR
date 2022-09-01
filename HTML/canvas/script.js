@@ -55,7 +55,6 @@ ctx.stroke();
 
 ctx.beginPath()
 
-
 let x = 700;
 let y = 500;
 let raio = 150;
@@ -82,3 +81,38 @@ ctx.arc(630, 450, 20, 0, 2 * Math.PI)
 ctx.fillStyle = 'black'
 ctx.fill()
 ctx.stroke()
+
+
+//////////////////////////////////////
+
+
+let circle = {
+    x: 500,
+    y: 400,
+    raio: 75,
+    inicio: 0,
+    fim: 0
+}
+
+let drawCircle = function(c) {
+    ctx.beginPath();
+    ctx.rect(0, 0, 1500, 1000)
+    ctx.fillStyle = "beige"
+    ctx.fill()
+
+    ctx.beginPath();
+    ctx.arc(c.x, c.y, c.raio, c.inicio, c.fim)
+    ctx.strokeStyle = "black"
+    ctx.fillStyle = "green"
+
+    ctx.stroke()
+    ctx.fill()
+}
+
+setInterval (function () {
+    if (circle.fim < 2 * Math.PI) {
+        circle.fim += 0.3
+    }
+
+    drawCircle(circle)
+}, 100)
