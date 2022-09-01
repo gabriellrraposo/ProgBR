@@ -116,3 +116,7 @@ setInterval (function () {
 
     drawCircle(circle)
 }, 100)
+
+
+// this.naturalWidth
+// this.naturalHeight
