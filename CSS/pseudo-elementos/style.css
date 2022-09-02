@@ -1,0 +1,34 @@
+::selection {
+    color: orangered;
+    background-color: yellow;
+}
+
+p::first-letter {
+    font-size: 3rem;
+}
+
+p::first-line {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+li::before {
+    content: "";
+    display: inline-block;
+    background-image: url(./icone-google.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+}
+
+::grammar-error {
+    color: red;
+    text-decoration: underline red;
+}
+
+/* Muitos pseudo-elementos não são compatíveis com os navegadores ou só estão disponíveis em en-US */
