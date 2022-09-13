@@ -9,22 +9,15 @@ let alunos = [
     novoAluno("Fábio", 12)
 ]
 
-let nomeIdade = function (aluno) {
-    return `${aluno.nome} tem ${aluno.idade} anos`
-}
+let nomeIdade = (aluno) => `${aluno.nome} tem ${aluno.idade} anos`
 
 console.log(alunos.map(nomeIdade))
 
-
 /////////////////////////////////////////
 
-
-let idadeEm2040 = function (aluno) {
-    return `${aluno.nome} terá ${aluno.idade + 18} anos em 2040`
-}
+let idadeEm2040 = aluno => `${aluno.nome} terá ${aluno.idade + 18} anos em 2040`
 
 console.log(alunos.map(idadeEm2040))
-
 
 //////////////////////////////////////////
 
