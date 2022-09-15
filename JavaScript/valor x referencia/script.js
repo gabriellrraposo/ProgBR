@@ -1,6 +1,6 @@
 //Arrays e objetos tem atribuição por referencia
 //Os tipos primitivos possuem atribuição por valor
-//Assistir novamente a aula
+//Assistir novamente a aula - tem um resuminho no final
 
 let alunos = {nome: 'Gabriel', idade: 18}
 let alunosB = alunos //Modifica o objeto inicial também
