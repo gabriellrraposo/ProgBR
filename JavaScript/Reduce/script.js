@@ -10,7 +10,6 @@ let alunos = [
 ]
 
 //Simula funcionamento do reduce
-let soma = 0
 let somaIdades = (alunos) => {
     alunos.forEach(element => {
         soma += element.idade
