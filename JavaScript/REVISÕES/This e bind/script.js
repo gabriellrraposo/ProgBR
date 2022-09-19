@@ -2,8 +2,7 @@ let answerName = prompt('Enter the name of an animal')
 let answerSound = prompt('Enter the sound this animal emits')
 
 let animals = [
-    newAnimal = {
-        name: answerName,
+    answerName = {
         sound: answerSound
     },
     
