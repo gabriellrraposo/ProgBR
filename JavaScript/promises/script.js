@@ -9,9 +9,9 @@ let inserirUsuario = (nome) => {
         }, 1000)
 
         if (error) {
-            resolve()
-        } else {
             reject({msg: "Erro qualquer coisa"})
+        } else {
+            resolve()
         }
     })
     
@@ -24,7 +24,7 @@ let mostrarUsuarios = function() {
 }
 
 inserirUsuario("Igor")
-.then(mostrarUsuarios)
+.then(mostrarUsuarios) //Só é executado quando der o resolve
 .catch((error) => {
     console.log(error)
 })
