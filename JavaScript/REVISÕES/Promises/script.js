@@ -1,9 +1,11 @@
-let adicionaNotasNoArray = (array, nota1, nota2, nota3) => {
-    // setTimeout(() => {
+let adicionaNotasNoArray = (array, nota1, nota2, nota3, callback) => {
+    setTimeout(() => {
         array.push(nota1)
         array.push(nota2)
         array.push(nota3)
-    // }, 1000);
+        callback(array)
+    }, 1000);
+    
 }
 
 let calculaMediaDoArray = (array) => {
@@ -40,11 +42,10 @@ let notas = []
 
 
 tratamentoDeErros(nota1, nota2, nota3)
-.then(adicionaNotasNoArray(notas, nota1, nota2, nota3))
-.then(calculaMediaDoArray(notas))
+.then(adicionaNotasNoArray(notas, nota1, nota2, nota3, calculaMediaDoArray))
 .catch((error) => {
     console.log(error)
 })
 
-
+//Não terminado, usar o git, caso queira ver como estava antes de fazer as modificações
 
