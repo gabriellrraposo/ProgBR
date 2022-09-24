@@ -1,9 +1,8 @@
-let adicionaNotasNoArray = (array, nota1, nota2, nota3, callback) => {
+let adicionaNotasNoArray = (array, nota1, nota2, nota3) => {
     setTimeout(() => {
         array.push(nota1)
         array.push(nota2)
         array.push(nota3)
-        callback(array)
     }, 1000);
     
 }
@@ -41,9 +40,7 @@ let notas = []
     }
 
 
-tratamentoDeErros(nota1, nota2, nota3)
-.then(adicionaNotasNoArray(notas, nota1, nota2, nota3, calculaMediaDoArray))
-.catch((error) => {
-    console.log(error)
-})
-
+let executar = async () => {
+    await adicionaNotasNoArray(notas, nota1, nota2, nota3)
+    calculaMediaDoArray(notas)
+}
