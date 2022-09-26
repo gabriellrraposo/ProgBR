@@ -9,17 +9,17 @@ let alunos = [
     novoAluno('Marta', 13)
 ]
 
-//Simula funcionamento do reduce
-let somaIdades = (alunos) => {
-    alunos.forEach(element => {
-        soma += element.idade
-    });
-    console.log(soma)
-}
+// //Simula funcionamento do reduce
+// let somaIdades = (alunos) => {
+//     alunos.forEach(element => {
+//         soma += element.idade
+//     });
+//     console.log(soma)
+// }
 
-somaIdades(alunos)
+// somaIdades(alunos)
 
 
-// let somaIdades = (total, aluno) => total + aluno.idade
+let somaIdades = (total, aluno) => total + aluno.idade
 
-// console.log(alunos.reduce(somaIdades, 0))
+console.log(alunos.reduce(somaIdades, 0))
