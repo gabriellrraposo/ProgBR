@@ -9,12 +9,12 @@ let users = [
     newUser('Carina', 27)
 ]
 
-let menosQue30 = users => users.idade < 30
-let maisQue30 = users => users.idade > 30 
+let lessThan30 = users => users.age < 30
+let moreThan30 = users => users.age > 30 
 
 
-let menos = users.filter(menosQue30)
-let mais = users.filter(maisQue30)
+let less = users.filter(lessThan30)
+let more = users.filter(moreThan30)
 
-console.log(menos)
-console.log(mais)
+console.log(less)
+console.log(more)
