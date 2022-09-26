@@ -10,8 +10,8 @@ let studentsList = [
     newStudent('Mario', 20, 8.1)
 ]
 
-let gradeGreaterThan75 = array => array.grade > 7.5
-let ageGreaterThan25 = array => array.age > 25
+let gradeGreaterThan75 = student => student.grade > 7.5
+let ageGreaterThan25 = student => student.age > 25
 
 let listGrade = studentsList.filter(gradeGreaterThan75)
 let listAge = studentsList.filter(ageGreaterThan25)
