@@ -4,16 +4,16 @@ let notas3 = [2, 4, 2, 4]
 
 
 let todasNotas = [...notas1, ...notas2, ...notas3]
+console.log(todasNotas)
 
 let soma = 0
 todasNotas.forEach(element => {
     soma += element
 });
 
-let mediaNotas = soma / todasNotas.length
+let media = (soma, array) => soma / array.length
 
-console.log(`A média de notas das provas realizadas foi ${mediaNotas}`)
-
+console.log(`A média de notas das provas realizadas foi ${media(soma, todasNotas)}`)
 
 
 /////////////////////////////////////////
