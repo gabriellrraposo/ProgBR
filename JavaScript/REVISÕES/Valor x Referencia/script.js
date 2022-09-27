@@ -37,3 +37,9 @@ let delUser = () => {
     username = ''
 }
 
+let finish = () => {
+    console.log(`Initial List: ${usersList}`)
+    console.log(`Final List: ${finalUsersList}`)
+    console.log(`Added Users: ${addedUsersList}`)
+    console.log(`Deleted Users: ${deletedUsersList}`)
+}
