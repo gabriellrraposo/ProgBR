@@ -1,4 +1,3 @@
-let username = document.getElementById('txtUsername').value
 let btnAdd = document.getElementById('btnAdd')
 let btnDel = document.getElementById('btnDel')
 
@@ -7,34 +6,40 @@ let finalUsersList = [...usersList]
 let addedUsersList = []
 let deletedUsersList = []
 
-
-console.log(usersList)
-
-
 let addUser = () => {
-    let indexUser = usersList.indexOf(`${username}`)
+    let username = document.getElementById('txtUsername')
+    username.setAttribute("value", "")
+    username = username.value
+    
+    let indexUser = finalUsersList.indexOf(`${username}`)
 
     if (indexUser == -1) {
         finalUsersList.push(username)
+        addedUsersList.push(username)
+        console.log('User successfully added!')
     } else {
         console.log(`The user ${username} is already in the users list.`)
     }
+
     
-    addedUsersList.push(username)
-    username = ''
 }
 
 let delUser = () => {
-    let indexUser = usersList.indexOf(`${username}`)
+    let username = document.getElementById('txtUsername')
+    username.setAttribute("value", "")
+    username = username.value
+    
+    let indexUser = finalUsersList.indexOf(`${username}`)
 
     if (indexUser == -1) {
         console.log(`The user ${username} wasn't found in the users list.`)
     } else {
         finalUsersList.splice(indexUser, 1)
+        deletedUsersList.push(username)
+        console.log('User successfully deleted!')
     }
 
-    deletedUsersList.push(username)
-    username = ''
+    
 }
 
 let finish = () => {
