@@ -23,8 +23,11 @@ let pessoas = ['Gabriel', 'Pedro', 'Joana']
 // let pessoasB = pessoas
 // pessoasB.push('Amarildo')
 
+// console.log(pessoas)
+// console.log(pessoasB)
+
 // let pessoasC = pessoas.slice() //quando não são colocados parâmetros, é feita uma cópia do array
-// pessoasC = pessoas.push('Maria')
+// pessoasC.push('Maria')
 // console.log(pessoasC)
 
 
@@ -33,3 +36,11 @@ pessoasD.push('Carla')
 
 console.log(pessoas)
 console.log(pessoasD)
+
+// ///////////////////////////////////
+
+// let nome = 'Gabriel'
+// let novoNome = 'Roberto'
+
+// console.log(nome)
+// console.log(novoNome)
