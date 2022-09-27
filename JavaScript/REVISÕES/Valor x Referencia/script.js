@@ -8,7 +8,6 @@ let deletedUsersList = []
 
 let addUser = () => {
     let username = document.getElementById('txtUsername')
-    username.setAttribute("value", "")
     username = username.value
     
     let indexUser = finalUsersList.indexOf(`${username}`)
@@ -26,7 +25,6 @@ let addUser = () => {
 
 let delUser = () => {
     let username = document.getElementById('txtUsername')
-    username.setAttribute("value", "")
     username = username.value
     
     let indexUser = finalUsersList.indexOf(`${username}`)
