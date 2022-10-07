@@ -19,3 +19,6 @@ header, section {
     padding-right: 15%;
 }
 
+header div, header div a {
+    height: fit-content;
+}
