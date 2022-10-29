@@ -131,7 +131,8 @@ turmaA.add({
 })
 
 
-
+//Adicionando um usuário com id definido
+//Por meio desse método, utilizando o set, também é possível atualizar o valor de algum campo
 turmaA.doc("alunoNovo").set(
     {
         nome: 'Mariana',
@@ -139,6 +140,22 @@ turmaA.doc("alunoNovo").set(
         notas: {
             nota1: 7.2,
             nota2: 9.4
+        }
+    }
+).then(() => {
+    console.log('Usuário inserido com sucesso!')
+}).catch(err => {
+    console.log(err)
+})
+
+//Atualizando os valorer de um documento e seus campos
+turmaA.doc("loSXnB4Yc4skmiAo5EUX").set(
+    {
+        nome: 'Carlos',
+        sobrenome: 'Amaral',
+        notas: {
+            nota1: 9.2,
+            nota2: 8.4
         }
     }
 ).then(() => {
