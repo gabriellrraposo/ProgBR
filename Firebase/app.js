@@ -167,24 +167,58 @@ turmaA = db.collection('turmaA')
 
 
 //Utilizando o update, que atualiza o valor desejado, mas não sobrescreve dados
-turmaA.doc("loSXnB4Yc4skmiAo5EUX").update(
+// turmaA.doc("loSXnB4Yc4skmiAo5EUX").update(
+//         {
+//             nome: 'Jeremias'
+//         }
+//     ).then(() => {
+//         console.log('Usuário inserido com sucesso!')
+//     }).catch(err => {
+//         console.log(err)
+//     })
+
+// //Para atualizar campos que estejam dentro de maps, deve-se utilizar as aspas
+//     turmaA.doc("loSXnB4Yc4skmiAo5EUX").update(
+//         {
+//             "notas.nota1": 4.6,
+//             "notas.nota2": 5.9
+//         }
+//     ).then(() => {
+//         console.log('Usuário inserido com sucesso!')
+//     }).catch(err => {
+//         console.log(err)
+//     })
+
+// //Também é possível adicionar novos campos com o update
+//     turmaA.doc("loSXnB4Yc4skmiAo5EUX").update(
+//         {
+//             faltas: 6
+//         }
+//     ).then(() => {
+//         console.log('Usuário inserido com sucesso!')
+//     }).catch(err => {
+//         console.log(err)
+//     })
+
+
+//Para atualizar arrays é diferente, pois ele atualiza tudo que está dentro do array se for feito do jeito convencional
+    turmaA.doc("zSHveTQwYiRdAunbk4EN").update(
         {
-            nome: 'Jeremias',
-        }, //Com o merge, o comando não sobrescreve os valores, ele junta os valores e atualiza normalmente
+            advertencias: firebase.firestore.FieldValue.arrayUnion({desc: "Faltou à aula", data: "17/06/2004"}) 
+        }
     ).then(() => {
         console.log('Usuário inserido com sucesso!')
     }).catch(err => {
         console.log(err)
     })
 
-//Para atualizar campos que estejam dentro de maps, deve-se utilizar as aspas
-    turmaA.doc("loSXnB4Yc4skmiAo5EUX").update(
-        {
-            "notas.nota1": 4.6,
-            "notas.nota2": 5.9
-        }, //Com o merge, o comando não sobrescreve os valores, ele junta os valores e atualiza normalmente
-    ).then(() => {
-        console.log('Usuário inserido com sucesso!')
-    }).catch(err => {
-        console.log(err)
-    })
+//Apagando as informações de um array
+turmaA.doc("zSHveTQwYiRdAunbk4EN").update(
+    {
+        advertencias: firebase.firestore.FieldValue.arrayRemove({desc: "Faltou à aula", data: "17/06/2004"}) 
+    }
+).then(() => {
+    console.log('Usuário inserido com sucesso!')
+}).catch(err => {
+    console.log(err)
+})
