@@ -202,20 +202,31 @@ turmaA = db.collection('turmaA')
 
 
 //Para atualizar arrays é diferente, pois ele atualiza tudo que está dentro do array se for feito do jeito convencional
-    turmaA.doc("zSHveTQwYiRdAunbk4EN").update(
-        {
-            advertencias: firebase.firestore.FieldValue.arrayUnion({desc: "Faltou à aula", data: "17/06/2004"}) 
-        }
-    ).then(() => {
-        console.log('Usuário inserido com sucesso!')
-    }).catch(err => {
-        console.log(err)
-    })
+    // turmaA.doc("zSHveTQwYiRdAunbk4EN").update(
+    //     {
+    //         advertencias: firebase.firestore.FieldValue.arrayUnion({desc: "Faltou à aula", data: "17/06/2004"}) 
+    //     }
+    // ).then(() => {
+    //     console.log('Usuário inserido com sucesso!')
+    // }).catch(err => {
+    //     console.log(err)
+    // })
 
 //Apagando as informações de um array
+// turmaA.doc("zSHveTQwYiRdAunbk4EN").update(
+//     {
+//         advertencias: firebase.firestore.FieldValue.arrayRemove({desc: "Faltou à aula", data: "17/06/2004"}) 
+//     }
+// ).then(() => {
+//     console.log('Usuário inserido com sucesso!')
+// }).catch(err => {
+//     console.log(err)
+// })
+
+//Incrementando um valor
 turmaA.doc("zSHveTQwYiRdAunbk4EN").update(
     {
-        advertencias: firebase.firestore.FieldValue.arrayRemove({desc: "Faltou à aula", data: "17/06/2004"}) 
+        faltas: firebase.firestore.FieldValue.increment(1) //Coloca o número que vai ser incrementado 
     }
 ).then(() => {
     console.log('Usuário inserido com sucesso!')
