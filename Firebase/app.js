@@ -117,50 +117,74 @@ turmaA = db.collection('turmaA')
 // })
 
 //Adicionando usuário com id aleatório
-turmaA.add({
-    nome: 'Júlia',
-    sobrenome: 'Andrade',
-    notas: {
-        nota1: 6.4,
-        nota2: 5.8
-    }
-}).then(doc => {
-    console.log('Usuário inserido com sucesso!', doc)
-}).catch(err => {
-    console.log(err)
-})
+// turmaA.add({
+//     nome: 'Júlia',
+//     sobrenome: 'Andrade',
+//     notas: {
+//         nota1: 6.4,
+//         nota2: 5.8
+//     }
+// }).then(doc => {
+//     console.log('Usuário inserido com sucesso!', doc)
+// }).catch(err => {
+//     console.log(err)
+// })
 
 
 //Adicionando um usuário com id definido
 //Por meio desse método, utilizando o set, também é possível atualizar o valor de algum campo
 //Cuidado: o set sobrescreve os dados existentes pelos digitados -> usar merge
-turmaA.doc("alunoNovo").set(
-    {
-        nome: 'Mariana',
-        sobrenome: 'Carvalho',
-        notas: {
-            nota1: 7.2,
-            nota2: 9.4
-        }
-    } 
-).then(() => {
-    console.log('Usuário inserido com sucesso!')
-}).catch(err => {
-    console.log(err)
-})
+// turmaA.doc("alunoNovo").set(
+//     {
+//         nome: 'Mariana',
+//         sobrenome: 'Carvalho',
+//         notas: {
+//             nota1: 7.2,
+//             nota2: 9.4
+//         }
+//     } 
+// ).then(() => {
+//     console.log('Usuário inserido com sucesso!')
+// }).catch(err => {
+//     console.log(err)
+// })
 
 //Atualizando os valorer de um documento e seus campos
-turmaA.doc("loSXnB4Yc4skmiAo5EUX").set(
-    {
-        nome: 'Douglas',
-        sobrenome: 'Gonçalves',
-        notas: {
-            nota1: 9.2,
-            nota2: 8.4
-        }
-    }, {merge: true} //Com o merge, o comando não sobrescreve os valores, ele junta os valores e atualiza normalmente
-).then(() => {
-    console.log('Usuário inserido com sucesso!')
-}).catch(err => {
-    console.log(err)
-})
+// turmaA.doc("loSXnB4Yc4skmiAo5EUX").set(
+//     {
+//         nome: 'Douglas',
+//         sobrenome: 'Gonçalves',
+//         notas: {
+//             nota1: 9.2,
+//             nota2: 8.4
+//         }
+//     }, {merge: true} //Com o merge, o comando não sobrescreve os valores, ele junta os valores e atualiza normalmente
+// ).then(() => {
+//     console.log('Usuário inserido com sucesso!')
+// }).catch(err => {
+//     console.log(err)
+// })
+
+
+//Utilizando o update, que atualiza o valor desejado, mas não sobrescreve dados
+turmaA.doc("loSXnB4Yc4skmiAo5EUX").update(
+        {
+            nome: 'Jeremias',
+        }, //Com o merge, o comando não sobrescreve os valores, ele junta os valores e atualiza normalmente
+    ).then(() => {
+        console.log('Usuário inserido com sucesso!')
+    }).catch(err => {
+        console.log(err)
+    })
+
+//Para atualizar campos que estejam dentro de maps, deve-se utilizar as aspas
+    turmaA.doc("loSXnB4Yc4skmiAo5EUX").update(
+        {
+            "notas.nota1": 4.6,
+            "notas.nota2": 5.9
+        }, //Com o merge, o comando não sobrescreve os valores, ele junta os valores e atualiza normalmente
+    ).then(() => {
+        console.log('Usuário inserido com sucesso!')
+    }).catch(err => {
+        console.log(err)
+    })
