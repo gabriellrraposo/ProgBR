@@ -133,6 +133,7 @@ turmaA.add({
 
 //Adicionando um usuário com id definido
 //Por meio desse método, utilizando o set, também é possível atualizar o valor de algum campo
+//Cuidado: o set sobrescreve os dados existentes pelos digitados -> usar merge
 turmaA.doc("alunoNovo").set(
     {
         nome: 'Mariana',
@@ -141,7 +142,7 @@ turmaA.doc("alunoNovo").set(
             nota1: 7.2,
             nota2: 9.4
         }
-    }
+    } 
 ).then(() => {
     console.log('Usuário inserido com sucesso!')
 }).catch(err => {
@@ -151,13 +152,13 @@ turmaA.doc("alunoNovo").set(
 //Atualizando os valorer de um documento e seus campos
 turmaA.doc("loSXnB4Yc4skmiAo5EUX").set(
     {
-        nome: 'Carlos',
-        sobrenome: 'Amaral',
+        nome: 'Douglas',
+        sobrenome: 'Gonçalves',
         notas: {
             nota1: 9.2,
             nota2: 8.4
         }
-    }
+    }, {merge: true} //Com o merge, o comando não sobrescreve os valores, ele junta os valores e atualiza normalmente
 ).then(() => {
     console.log('Usuário inserido com sucesso!')
 }).catch(err => {
