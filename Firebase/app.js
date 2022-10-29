@@ -233,3 +233,22 @@ turmaA.doc("zSHveTQwYiRdAunbk4EN").update(
 }).catch(err => {
     console.log(err)
 })
+
+
+//Apagando um campo de um documento
+turmaA.doc("zSHveTQwYiRdAunbk4EN").update(
+    {
+        faltas: firebase.firestore.FieldValue.delete()
+    }
+).then(() => {
+    console.log('Usuário inserido com sucesso!')
+}).catch(err => {
+    console.log(err)
+})
+
+//Apagando um documento inteiro
+turmaA.doc('AuXubcg0bO1Dvar3q3J4').delete().then(() => {
+    console.log('Usuário apagado com sucesso!')
+}).catch(err => {
+    console.log(err)
+})
