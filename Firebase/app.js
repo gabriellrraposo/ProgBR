@@ -35,8 +35,27 @@ docRef
         console.log(doc.data().advertencias)
     })
 
-
+//Consultando informações com filtro, informações que tenham alguma característica desejada
 turmaA.where("nome", "==", "José")
+    .get()
+    .then(snapshot => {
+        snapshot.forEach(doc => {
+            let aluno = doc.data()
+            console.log(aluno.nome)
+        })
+    })
+
+
+//Consultando todos os nomes que não sejam José. Utiliza-se os <, >, pois não é permitido utilizar !=
+turmaA.where("nome", "<", "José")
+    .get()
+    .then(snapshot => {
+        snapshot.forEach(doc => {
+            let aluno = doc.data()
+            console.log(aluno.nome)
+        })
+    })
+turmaA.where("nome", ">", "José")
     .get()
     .then(snapshot => {
         snapshot.forEach(doc => {
