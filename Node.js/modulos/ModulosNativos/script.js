@@ -1,7 +1,8 @@
 let fs = require('fs')
 
-fs.writeFile('text.txt', 'Hello World', (err) => {
+fs.appendFile('text.txt', 'Olá Mundo!', (err) => {
     if (err) throw err
 
-    console.log('Arquivo criado com sucesso!')
+    console.log('Arquivo atualizado com sucesso!')
 })
+
