@@ -32,6 +32,8 @@ let compress = (inputPath, outputPath) => {
     console.log(statistic);
     console.log("-------------");
 
+    // sharpen("./compressed/output_resize.jpg")
+
     fs.unlink(inputPath, err => {
         if (err) throw err
 
@@ -40,5 +42,13 @@ let compress = (inputPath, outputPath) => {
 }
 )
 }
+
+// let sharpen = (inputPath) => {
+//     sharp(inputPath).sharpen({sigma: 10}).toFile("./sharpened/", err => {
+//         if (err) throw err
+
+//         console.log("O arquivo está mais nítido agora")
+//     })
+// }
 
 resize(path, "./temp/output_resize.jpg", width)
