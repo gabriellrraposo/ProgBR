@@ -4,8 +4,12 @@ const fs = require('fs')
 
 http.createServer((req, res) => {
     let path = url.parse(req.url).pathname
+    
+    if (path == "" || path == "/") {
+        path = "/index.html"
+    }
+    
     let fileName = "." + path
-
     fs.readFile(fileName, (err, fd) => {
         if (err) {
             res.writeHead(404, {"Content-Type": "text/html;charset=utf-8"})
