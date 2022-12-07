@@ -13,6 +13,21 @@ app.get("/", (req, res) => {
     res.send('<h1>hello world from GET</h1>')
 })
 
+app.post("/", (req, res) => {
+    res.type('html')
+    res.send('<h1>Hello World from POST!</h1>')
+})
+
+app.put("/", (req, res) => {
+    res.type('html')
+    res.send('<h1>Hello World from PUT!</h1>')
+})
+
+app.delete("/", (req, res) => {
+    res.type('html')
+    res.send('<h1>Hello World from DELETE!</h1>')
+})
+
 const PORT = 5000
 app.listen(PORT, () => {
     console.log(`Server Running on port: ${PORT}`)
