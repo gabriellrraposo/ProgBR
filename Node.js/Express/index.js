@@ -9,7 +9,7 @@ app.use("/meusite", express.static(path.join(__dirname, 'client')))
 app.get("/", (req, res) => {
     // res.set({"Content-Type": "text/plain"})
 
-    res.type('txt')
+    res.type('html')
     res.send('<h1>hello world from GET</h1>')
 })
 
