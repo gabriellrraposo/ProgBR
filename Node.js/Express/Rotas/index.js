@@ -24,16 +24,20 @@ app.get("/alunos", (req, res) => {
     res.json(JSON.stringify(alunos))
 })
 
-// app.get("/aluno", (req, res) => {
-//     console.log(req.body)
-//     let aluno = alunos[req.body.id]
-//     res.json(aluno)
-// })
-
-app.get("/aluno/:id", (req, res) => {
-    console.log(req.params.id)
-    let aluno = alunos[req.params.id]
+app.get("/aluno", (req, res) => {
+    console.log(req.body)
+    console.log(req.query)
+    // let aluno = alunos[req.body.id]
+    let aluno = alunos[req.query.id]
     res.json(aluno)
 })
+// http://192.168.0.247:3000/aluno?id=1 //Passa uma query
+
+// app.get("/aluno/:id", (req, res) => {
+//     console.log(req.params.id)
+//     let aluno = alunos[req.params.id]
+//     res.json(aluno)
+// })
+//http://192.168.0.247:3000/aluno/1
 
 app.listen(3000, () => {console.log("Server running")})
