@@ -2,21 +2,38 @@ const express = require('express')
 const app = express()
 const bp = require('body-parser')
 
-let consoleBody = (req, res, next) => {
-    console.log(req.body)
-    next()
-    // next("Error de qualquer coisa") //Se não passar nada nos parâmetros apenas passa para a próxima função do middleware, mas se você passar um parâmetro você quer dizer que ocorreu um erro, então se passa uma mensagem e a execução para ali (não executa a próxima função do middleware)
-}
+app.use("/", bp.urlencoded({ extended: true }))
 
-let hello = (req, res) => {
+let alunos = [
+        {id: 0, nome: "José"},
+        {id: 1, nome: "Maria"},
+        {id: 2, nome: "João"},
+        {id: 3, nome: "Marcos"}
+    ]
+
+
+//Esse primeiro parâmetro é chamado de rota
+app.get("/", (req, res) => {
     res.send("Hello World")
-}
+})
 
-app.use("/", bp.json())
-app.use("/", consoleBody) //usado para executar um middleware independente do tipo de requisição
+//Esse primeiro parâmetro é chamado de rota
+app.get("/alunos", (req, res) => {
+    
 
-app.get("/", hello)
-// app.get("/", consoleMethod, hello)
-app.post("/", hello)
+    res.json(JSON.stringify(alunos))
+})
+
+// app.get("/aluno", (req, res) => {
+//     console.log(req.body)
+//     let aluno = alunos[req.body.id]
+//     res.json(aluno)
+// })
+
+app.get("/aluno/:id", (req, res) => {
+    console.log(req.params.id)
+    let aluno = alunos[req.params.id]
+    res.json(aluno)
+})
 
 app.listen(3000, () => {console.log("Server running")})
