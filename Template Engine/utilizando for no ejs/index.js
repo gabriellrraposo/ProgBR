@@ -5,7 +5,7 @@ const ejs = require('ejs')
 
 const app = express()
 
-let user = [
+let users = [
     {
         id: 0,
         name:"Gabriel Lucas", 
@@ -32,7 +32,7 @@ app.set("view engine", "ejs")
 
 
 app.get("/", (req, res) => {
-    res.render('user.ejs', user) //Renderiza a página que foi especificada (como se fosse o res.send)
+    res.render('user.ejs', { users }) //Renderiza a página que foi especificada (como se fosse o res.send)
 
 })
 
