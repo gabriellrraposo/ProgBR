@@ -5,10 +5,26 @@ const ejs = require('ejs')
 
 const app = express()
 
-let user = {
-    name:"Gabriel Lucas", 
-    phone: "(12) 954334323"
-}
+let user = [
+    {
+        id: 0,
+        name:"Gabriel Lucas", 
+        phone: "(12) 954334323"
+    },
+
+    {
+        id: 1,
+        name:"Patrícia", 
+        phone: "(12) 924393451"
+    },
+
+    {
+        id: 0,
+        name:"Davi", 
+        phone: "(31) 954888327"
+    }
+]
+
 
 app.set("views", path.join(__dirname, 'views')) //Setando onde estão os templates
 app.set("view engine", "ejs")
