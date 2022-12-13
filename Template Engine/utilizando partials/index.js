@@ -33,7 +33,10 @@ app.set("view engine", "ejs")
 
 app.get("/", (req, res) => {
     res.render('user.ejs', { users }) //Renderiza a página que foi especificada (como se fosse o res.send)
+})
 
+app.get("/about", (req, res) => {
+    res.render('about.ejs')
 })
 
 app.listen(3000, () => {
